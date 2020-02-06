@@ -1,4 +1,5 @@
 FROM alpine
-ENV name reborn
-ENTRYPOINT echo hello
-ENTRYPOINT ["/bin/sh","-c","while true;do sleep 3600;done"]
+LABEL maintainer="<tianyalangrenfan@gmail.com>"
+COPY test.sh /scripts/
+WORKDIR /scripts
+CMD /bin/sh -c test.sh
